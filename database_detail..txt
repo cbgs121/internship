@@ -1,0 +1,93 @@
+    <-------------------🙏Discription Of All Tables Used In Ntpc Project🙏------------------->
+
+
+use ntpc;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++----------------+
+| Tables_in_ntpc |
++----------------+
+| CUSTOMERS      |
+| admin          |
+| assigned_itmes |
+| issued_items   |
+| registration   |
+| store          |
++----------------+
+6 rows in set (0.00 sec)
+mysql> desc admin;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| username | varchar(30) | YES  |     | NULL    |       |
+| password | varchar(20) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+2 rows in set (0.06 sec)
+
+mysql> desc store;
++-------------------+-------------+------+-----+---------+-------+
+| Field             | Type        | Null | Key | Default | Extra |
++-------------------+-------------+------+-----+---------+-------+
+| product_name      | varchar(30) | YES  |     | NULL    |       |
+| company           | varchar(20) | YES  |     | NULL    |       |
+| machine_serial_no | varchar(30) | YES  |     | NULL    |       |
+| incoming_date     | varchar(50) | YES  |     | NULL    |       |
++-------------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> desc registration;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| empid    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| email    | varchar(50) | YES  |     | NULL    |                |
+| phoneno  | varchar(10) | YES  |     | NULL    |                |
+| verify   | int(11)     | YES  |     | NULL    |                |
+| password | varchar(30) | YES  |     | NULL    |                |
+| name     | varchar(20) | YES  |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> desc issued_items;
++-------------------+--------------+------+-----+---------+-------+
+| Field             | Type         | Null | Key | Default | Extra |
++-------------------+--------------+------+-----+---------+-------+
+| making_partner    | varchar(20)  | YES  |     | NULL    |       |
+| product_name      | varchar(30)  | YES  |     | NULL    |       |
+| machine_serial_no | varchar(30)  | YES  |     | NULL    |       |
+| department        | varchar(20)  | YES  |     | NULL    |       |
+| empid             | varchar(100) | NO   |     | NULL    |       |
+| empname           | char(20)     | YES  |     | NULL    |       |
+| phoneno           | char(20)     | YES  |     | NULL    |       |
+| email             | varchar(30)  | YES  |     | NULL    |       |
+| issuedate         | varchar(20)  | YES  |     | NULL    |       |
++-------------------+--------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> desc assigned_itmes;
++-------------------+-------------+------+-----+---------+-------+
+| Field             | Type        | Null | Key | Default | Extra |
++-------------------+-------------+------+-----+---------+-------+
+| making_partner    | varchar(20) | YES  |     | NULL    |       |
+| product_name      | varchar(30) | NO   | PRI | NULL    |       |
+| machine_serial_no | varchar(30) | NO   | PRI | NULL    |       |
+| empid             | int(11)     | NO   | MUL | NULL    |       |
+| issueddate        | varchar(20) | YES  |     | NULL    |       |
+| department        | varchar(30) | YES  |     | NULL    |       |
++-------------------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+mysql> desc CUSTOMERS;
++---------+---------------+------+-----+---------+-------+
+| Field   | Type          | Null | Key | Default | Extra |
++---------+---------------+------+-----+---------+-------+
+| ID      | int(11)       | NO   | PRI | NULL    |       |
+| NAME    | varchar(20)   | NO   |     | NULL    |       |
+| AGE     | int(11)       | NO   |     | NULL    |       |
+| ADDRESS | char(25)      | NO   | PRI | NULL    |       |
+| SALARY  | decimal(18,2) | YES  |     | NULL    |       |
++---------+---------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
